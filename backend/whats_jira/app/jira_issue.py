@@ -5,12 +5,10 @@ from requests.auth import HTTPBasicAuth
 import json
 import os
 
-jira_api_key = os.environ.get('JIRA_API_KEY')
-print("Jira api key: ", jira_api_key)
 
 url = "https://whatsapptojira.atlassian.net/rest/api/3/issue"
 
-auth = HTTPBasicAuth("apitesting521@gmail.com", jira_api_key)
+auth = HTTPBasicAuth("apitesting521@gmail.com", os.environ.get('JIRA_API_KEY'))
 
 headers = {
   "Accept": "application/json",
