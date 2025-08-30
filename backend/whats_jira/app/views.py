@@ -14,16 +14,17 @@ import os
 @csrf_exempt
 def index(request):
     if request.method == "POST":
-        message_json = twilio_test()
-        message = message_json.content.decode('utf-8')
-        message = json.loads(message)['message']
-        print(message)
+        # message_json = twilio_test()
+        # message = message_json.content.decode('utf-8')
+        # message = json.loads(message)['message']
+        messsage = "Add a new feature in which user can perform crud operation on their customer"
+        print(messsage)
         prompt = (
                 "Suppose you are a WhatsApp message extractor. I have configured Twilio with Python so "
                 "'Hello twilio' and its related words should be ignored. Extract actual professional details "
                 "from the prompt. Output in JSON format: "
                 "{'title': '', 'description': '', 'priority': '', 'labels': 'list of labels'}. "
-                "Message is: " + message
+                "Message is: " + messsage
             )
         result = gemini_response(prompt).text
         result = result.strip("```json").strip("```").strip()
