@@ -6,6 +6,7 @@ import json
 import os
 
 jira_api_key = os.environ.get('JIRA_API_KEY')
+print("Jira api key: ", jira_api_key)
 
 url = "https://whatsapptojira.atlassian.net/rest/api/3/issue"
 
