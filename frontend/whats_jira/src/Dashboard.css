@@ -1,0 +1,139 @@
+.dashboard-bg {
+  width: 100vw;
+  min-height: 100vh;
+  background: transparent;
+  padding: 2rem 0;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dashboard-loading,
+.dashboard-empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.dashboard-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px 0 rgba(60,72,88,0.12);
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-ticket-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.priority-badge {
+  padding: 0.3em 1em;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  background: #4f8cff;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+.priority-high {
+  background: #e53e3e;
+}
+.priority-medium {
+  background: #ed8936;
+}
+.priority-low {
+  background: #38a169;
+}
+
+.dashboard-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.dashboard-ticket-desc {
+  font-size: 1.05rem;
+  color: #444;
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 0.7em;
+  min-height: 60px;
+}
+
+.labels-section {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.label-badge {
+  background: #edf2f7;
+  color: #4f8cff;
+  border-radius: 12px;
+  padding: 0.2em 0.8em;
+  font-size: 0.95em;
+  font-weight: 500;
+  border: 1px solid #c3dafe;
+}
+
+.dashboard-table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: black;
+}
+
+.dashboard-table {
+  width: 90vw;
+  max-width: 1200px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px 0 rgba(60,72,88,0.12);
+}
+
+.dashboard-table th, .dashboard-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+.dashboard-table th {
+  background: #f5f7fa;
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.dashboard-table tr:last-child td {
+  border-bottom: none;
+}
