@@ -111,8 +111,6 @@ def jira_issue_creation(request):
     
 
 def twilio_test():
-    # account_sid = 'AC3538a8e4093981b5c62f63269ce8c411'
-    # auth_token = 'c0d200f6f27b168d35808d4cace4ee0a'
     account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
     auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
 
