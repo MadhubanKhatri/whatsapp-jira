@@ -1,10 +1,15 @@
+import dotenv
+dotenv.load_dotenv()
 import requests
 from requests.auth import HTTPBasicAuth
 import json
+import os
+
+jira_api_key = os.environ.get('JIRA_API_KEY')
 
 url = "https://whatsapptojira.atlassian.net/rest/api/3/issue"
 
-auth = HTTPBasicAuth("apitesting521@gmail.com", "ATATT3xFfGF0p26M2HlAbmGNYZpiUGctAnrprzlL5hDvFnIerTS3H_6uN1QJ5OzeWR9e1oDznQEI9HhpYU2y4wiWU2Y_udgSn5_7cNsAjwZnBXKOvERqL_8xF8U-y_l2dFQ6GwA8Ld8_pfAWpIg0bDwqJFcoILHIVS8ep3rF9nzoDnXVTDcxaJU=101F902C")
+auth = HTTPBasicAuth("apitesting521@gmail.com", jira_api_key)
 
 headers = {
   "Accept": "application/json",
