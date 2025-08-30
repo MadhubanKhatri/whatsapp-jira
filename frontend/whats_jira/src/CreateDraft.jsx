@@ -37,7 +37,7 @@ function CreateDraft() {
           onChange={e => setMessage(e.target.value)}
         /> */}
         <button className="draft-send-btn" onClick={handleSend} disabled={loading}>Fetch Whatsapp Messages</button>        
-        {loading && <div className="draft-status">Loading...</div>}
+        {loading && <div className="draft-status">Fetching & Generating...</div>}
         {!loading && status && (
           <div className={`draft-status ${status.includes('sent') ? 'success' : 'error'}`}>{status}</div>
         )}
