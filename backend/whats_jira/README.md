@@ -39,7 +39,10 @@ WhatsJira is a Django-based backend service that integrates WhatsApp messaging (
    ```
    TWILIO_ACCOUNT_SID=your_twilio_sid
    TWILIO_AUTH_TOKEN=your_twilio_auth_token
-   GOOGLE_APPLICATION_CREDENTIALS=path_to_your_google_credentials.json
+   GEMINI_API_KEY=gemini_api_key
+    JIRA_API_KEY=jira_api_key
+    JIRA_EMAIL=jira_email
+    JIRA_URL=jira_issu_url
    ```
 
 4. Run migrations:
@@ -62,8 +65,6 @@ WhatsJira is a Django-based backend service that integrates WhatsApp messaging (
 
 ## API Endpoints
 
-- `POST /` : Extracts ticket info from WhatsApp message and creates a draft ticket.
-- `GET /fetch_draft_tickets/` : Lists all draft tickets.
-- `POST /jira_issue_creation/` : Approves and creates a Jira ticket.
-
-
+- `POST /draft` : Extracts ticket info from WhatsApp message and creates a draft ticket.
+- `GET /fetch_drafts/` : Lists all draft and unapproved tickets.
+- `POST /jira_ticket/` : Approves and creates a Jira ticket.
