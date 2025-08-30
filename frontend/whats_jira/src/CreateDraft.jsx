@@ -28,14 +28,6 @@ function CreateDraft() {
   return (
     <div className="create-draft-bg">
       <div className="create-draft-card">
-        {/* <h2 className="create-draft-title">Message</h2> */}
-        {/* <input
-          type="text"
-          className="draft-input"
-          placeholder="Type your message..."
-          value={message}
-          onChange={e => setMessage(e.target.value)}
-        /> */}
         <button className="draft-send-btn" onClick={handleSend} disabled={loading}>Fetch Whatsapp Messages</button>        
         {loading && <div className="draft-status">Fetching & Generating...</div>}
         {!loading && status && (
