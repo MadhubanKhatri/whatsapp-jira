@@ -17,12 +17,12 @@ def index(request):
         message_json = twilio_test()
         message = message_json.content.decode('utf-8')
         message = json.loads(message)['message']
-    
+        print(message)
         prompt = (
                 "Suppose you are a WhatsApp message extractor. I have configured Twilio with Python so "
                 "'Hello twilio' and its related words should be ignored. Extract actual professional details "
                 "from the prompt. Output in JSON format: "
-                "{'title': '', 'description': '', 'priority': '', 'labels': ''}. "
+                "{'title': '', 'description': '', 'priority': '', 'labels': 'list of labels'}. "
                 "Message is: " + message
             )
         result = gemini_response(prompt).text
@@ -31,7 +31,7 @@ def index(request):
         json_res = json.loads(result)
         
         json_res["labels"] = [item.replace(' ', '') for item in json_res["labels"]]
-        
+        print(json_res)
         if json_res["priority"] == "1":
             json_res["priority"] = "Highest"
         elif json_res["priority"] == "2":
@@ -117,18 +117,18 @@ def twilio_test():
     print(account_sid, auth_token)
     client = Client(account_sid, auth_token)
 
-    # message = client.messages.create(
-    #     body='Add input field and button for uploading some data in it',
-    #     from_='whatsapp:+14155238886',  # Twilio sandbox WhatsApp number
-    #     to='whatsapp:+917568170690'  # Your WhatsApp number in E.164 format
-    # )
+    message = client.messages.create(
+        body='Add new feature in which user can see all the report of their customers and can perform crud operation on it',
+        from_='whatsapp:+14155238886',  # Twilio sandbox WhatsApp number
+        to='whatsapp:+917568170690'  # Your WhatsApp number in E.164 format
+    )
 
-    messages = client.messages.list(limit=20, to='whatsapp:+917568170690')
-    actual_msg = ""
-    for record in reversed(messages):
-        actual_msg+= record.body +" "
+    # messages = client.messages.list(limit=20, to='whatsapp:+917568170690')
+    # actual_msg = ""
+    # for record in reversed(messages):
+    #     actual_msg+= record.body +" "
     # print(actual_msg)
 
     # print(message.sid)
-    return JsonResponse({"status": "success", "message": actual_msg})
+    return JsonResponse({"status": "success", "message": "actual_msg"})
 
