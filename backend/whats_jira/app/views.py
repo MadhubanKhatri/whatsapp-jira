@@ -1,12 +1,15 @@
+import dotenv
+dotenv.load_dotenv()
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .gemini_llm import gemini_response , audio_to_text
+from .gemini_llm import gemini_response
 from .models import JiraTicket
 import json
 from .jira_issue import create_jir_issue
 from google.cloud import speech
 from django.views.decorators.csrf import csrf_exempt
 from twilio.rest import Client
+import os
 
 @csrf_exempt
 def index(request):
@@ -108,8 +111,12 @@ def jira_issue_creation(request):
     
 
 def twilio_test():
-    account_sid = 'AC3538a8e4093981b5c62f63269ce8c411'
-    auth_token = 'c0d200f6f27b168d35808d4cace4ee0a'
+    # account_sid = 'AC3538a8e4093981b5c62f63269ce8c411'
+    # auth_token = 'c0d200f6f27b168d35808d4cace4ee0a'
+    account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
+    auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
+
+    print(account_sid, auth_token)
     client = Client(account_sid, auth_token)
 
     # message = client.messages.create(

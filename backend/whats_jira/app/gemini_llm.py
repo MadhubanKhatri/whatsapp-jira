@@ -1,6 +1,11 @@
+import dotenv
+dotenv.load_dotenv()
 from google import genai
 import speech_recognition as sr
-client = genai.Client(api_key="AIzaSyD9NzSolHGP3zOKkWNQyGiSfLhJXHstEwY")
+import os
+
+gemini_api_key = os.environ.get('GEMINI_API_KEY')
+client = genai.Client(api_key=gemini_api_key)
 
 
 def gemini_response(command):
